@@ -12,4 +12,7 @@ enum CoordinatorType {
     /// but doesn't support multiple view controllers being shown in the child coordinator.
     /// viewDidDisappear() will be called prematurely, and our coordinator stack will get confused.
     case basic
+
+    /// TODO: Laurie
+    case navigationControllerDelegate
 }

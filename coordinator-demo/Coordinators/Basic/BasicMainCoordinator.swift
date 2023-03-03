@@ -22,7 +22,7 @@ class BasicMainCoordinator: Coordinator, MainCoordinator {
     }
 
     func button1Clicked() {
-        print("BasicChildCoordinator added")
+        print("Basic Coordinator added")
         let child = BasicChildCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self
@@ -32,7 +32,7 @@ class BasicMainCoordinator: Coordinator, MainCoordinator {
     func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
-                print("BasicChildCoordinator removed")
+                print("Basic Coordinator removed")
                 childCoordinators.remove(at: index)
                 break
             }
