@@ -13,6 +13,6 @@ enum CoordinatorType {
     /// viewDidDisappear() will be called prematurely, and our coordinator stack will get confused.
     case basic
 
-    /// TODO: Laurie
+    /// Involves extending the coordinator to become the navigation controller delegate, and then handling deallocation when this delegate method fires.
     case navigationControllerDelegate
 }
