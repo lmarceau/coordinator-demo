@@ -15,4 +15,7 @@ enum CoordinatorType {
 
     /// Involves extending the coordinator to become the navigation controller delegate, and then handling deallocation when this delegate method fires.
     case navigationControllerDelegate
+
+    /// We keep reference of closures to execute foreach UIViewController pushed forward to deallocate matching Coordinator when navigating back.
+    case router
 }

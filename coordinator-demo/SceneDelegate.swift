@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var mainCoordinator: Coordinator?
 
     // Change the coordinator you want to use for the demo here
-    let coordinatorType: CoordinatorType = .navigationControllerDelegate
+    let coordinatorType: CoordinatorType = .router
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -27,6 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             mainCoordinator = BasicMainCoordinator(navigationController: navigationController)
         case .navigationControllerDelegate:
             mainCoordinator = NavigationControllerDelegateMainCoordinator(navigationController: navigationController)
+        case .router:
+            let router = DefaultRouter(navigationController: navigationController)
+            mainCoordinator = RouterMainCoordinator(router: router)
         }
         mainCoordinator?.start()
 

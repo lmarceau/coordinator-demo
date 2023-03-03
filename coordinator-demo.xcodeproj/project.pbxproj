@@ -23,6 +23,11 @@
 		8AFDD54629B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54529B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift */; };
 		8AFDD54829B2943D00CD329B /* NavigationControllerDelegateChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54729B2943D00CD329B /* NavigationControllerDelegateChildCoordinator.swift */; };
 		8AFDD54B29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54A29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift */; };
+		8AFDD54E29B29B9500CD329B /* RouterMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54D29B29B9500CD329B /* RouterMainCoordinator.swift */; };
+		8AFDD55029B29BB400CD329B /* RouterChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54F29B29BB400CD329B /* RouterChildCoordinator.swift */; };
+		8AFDD55329B29BF300CD329B /* RouterPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */; };
+		8AFDD55529B29C9400CD329B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55429B29C9400CD329B /* Router.swift */; };
+		8AFDD55929B29CC400CD329B /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55829B29CC400CD329B /* Presentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		8AFDD54529B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegateMainCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD54729B2943D00CD329B /* NavigationControllerDelegateChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegateChildCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD54A29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavControllerDelegatePresentedViewController.swift; sourceTree = "<group>"; };
+		8AFDD54D29B29B9500CD329B /* RouterMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMainCoordinator.swift; sourceTree = "<group>"; };
+		8AFDD54F29B29BB400CD329B /* RouterChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildCoordinator.swift; sourceTree = "<group>"; };
+		8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPresentedViewController.swift; sourceTree = "<group>"; };
+		8AFDD55429B29C9400CD329B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8AFDD55829B29CC400CD329B /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				8AFDD53B29B27FEB00CD329B /* Coordinators */,
-				8AFDD53A29B27FDD00CD329B /* ViewControllers */,
 				8AFDD53529B27C3500CD329B /* Extensions */,
+				8AFDD55729B29CBD00CD329B /* Protocol */,
+				8AFDD53A29B27FDD00CD329B /* ViewControllers */,
 				8AFDD50129B2606100CD329B /* AppDelegate.swift */,
 				8AFDD50329B2606100CD329B /* SceneDelegate.swift */,
 				8AFDD50A29B2606200CD329B /* Assets.xcassets */,
@@ -127,9 +138,10 @@
 		8AFDD53A29B27FDD00CD329B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8AFDD50529B2606100CD329B /* MainViewController.swift */,
 				8AFDD54129B289A300CD329B /* Basic */,
+				8AFDD50529B2606100CD329B /* MainViewController.swift */,
 				8AFDD54929B298E000CD329B /* NavigationControllerDelegate */,
+				8AFDD55129B29BE300CD329B /* Router */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -137,11 +149,12 @@
 		8AFDD53B29B27FEB00CD329B /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				8AFDD53E29B2893500CD329B /* CoordinatorType.swift */,
-				8AFDD53129B272A000CD329B /* Coordinator.swift */,
-				8AFDD54229B292CA00CD329B /* MainCoordinator.swift */,
 				8AFDD54029B2899A00CD329B /* Basic */,
+				8AFDD53129B272A000CD329B /* Coordinator.swift */,
+				8AFDD53E29B2893500CD329B /* CoordinatorType.swift */,
+				8AFDD54229B292CA00CD329B /* MainCoordinator.swift */,
 				8AFDD54429B293EE00CD329B /* NavigationControllerDelegate */,
+				8AFDD54C29B29B7700CD329B /* Router */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -178,6 +191,32 @@
 				8AFDD54A29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift */,
 			);
 			path = NavigationControllerDelegate;
+			sourceTree = "<group>";
+		};
+		8AFDD54C29B29B7700CD329B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8AFDD55429B29C9400CD329B /* Router.swift */,
+				8AFDD54D29B29B9500CD329B /* RouterMainCoordinator.swift */,
+				8AFDD54F29B29BB400CD329B /* RouterChildCoordinator.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8AFDD55129B29BE300CD329B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8AFDD55729B29CBD00CD329B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8AFDD55829B29CC400CD329B /* Presentable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,11 +327,16 @@
 				8AFDD53D29B2864200CD329B /* BasicChildCoordinator.swift in Sources */,
 				8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */,
 				8AFDD54B29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift in Sources */,
+				8AFDD55329B29BF300CD329B /* RouterPresentedViewController.swift in Sources */,
 				8AFDD53F29B2893500CD329B /* CoordinatorType.swift in Sources */,
+				8AFDD55529B29C9400CD329B /* Router.swift in Sources */,
 				8AFDD54829B2943D00CD329B /* NavigationControllerDelegateChildCoordinator.swift in Sources */,
+				8AFDD54E29B29B9500CD329B /* RouterMainCoordinator.swift in Sources */,
 				8AFDD53429B272C600CD329B /* BasicMainCoordinator.swift in Sources */,
+				8AFDD55029B29BB400CD329B /* RouterChildCoordinator.swift in Sources */,
 				8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */,
 				8AFDD53929B27E8000CD329B /* BasicPresentedViewController.swift in Sources */,
+				8AFDD55929B29CC400CD329B /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
