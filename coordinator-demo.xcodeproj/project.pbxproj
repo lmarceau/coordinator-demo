@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A233BAA29B79D1900C4E35B /* SelfDeallocChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */; };
+		8A233BAD29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */; };
 		8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50129B2606100CD329B /* AppDelegate.swift */; };
 		8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50329B2606100CD329B /* SceneDelegate.swift */; };
 		8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50529B2606100CD329B /* MainViewController.swift */; };
@@ -28,6 +30,7 @@
 		8AFDD55329B29BF300CD329B /* RouterPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */; };
 		8AFDD55529B29C9400CD329B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55429B29C9400CD329B /* Router.swift */; };
 		8AFDD55929B29CC400CD329B /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55829B29CC400CD329B /* Presentable.swift */; };
+		8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55B29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocChildCoordinator.swift; sourceTree = "<group>"; };
+		8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocPresentedViewController.swift; sourceTree = "<group>"; };
 		8AFDD4FE29B2606100CD329B /* coordinator-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coordinator-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFDD50129B2606100CD329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFDD50329B2606100CD329B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPresentedViewController.swift; sourceTree = "<group>"; };
 		8AFDD55429B29C9400CD329B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8AFDD55829B29CC400CD329B /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		8AFDD55B29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocMainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A233BAB29B79D3900C4E35B /* SelfDeallocating */ = {
+			isa = PBXGroup;
+			children = (
+				8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */,
+			);
+			path = SelfDeallocating;
+			sourceTree = "<group>";
+		};
 		8AFDD4F529B2606100CD329B = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +152,7 @@
 		8AFDD53A29B27FDD00CD329B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8A233BAB29B79D3900C4E35B /* SelfDeallocating */,
 				8AFDD54129B289A300CD329B /* Basic */,
 				8AFDD50529B2606100CD329B /* MainViewController.swift */,
 				8AFDD54929B298E000CD329B /* NavigationControllerDelegate */,
@@ -149,6 +164,7 @@
 		8AFDD53B29B27FEB00CD329B /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				8AFDD55A29B2AB2600CD329B /* SelfDeallocating */,
 				8AFDD54029B2899A00CD329B /* Basic */,
 				8AFDD53129B272A000CD329B /* Coordinator.swift */,
 				8AFDD53E29B2893500CD329B /* CoordinatorType.swift */,
@@ -217,6 +233,15 @@
 				8AFDD55829B29CC400CD329B /* Presentable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8AFDD55A29B2AB2600CD329B /* SelfDeallocating */ = {
+			isa = PBXGroup;
+			children = (
+				8AFDD55B29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift */,
+				8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */,
+			);
+			path = SelfDeallocating;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +346,7 @@
 			files = (
 				8AFDD53729B27C4200CD329B /* UIViewExtension.swift in Sources */,
 				8AFDD53229B272A000CD329B /* Coordinator.swift in Sources */,
+				8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */,
 				8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */,
 				8AFDD54329B292CA00CD329B /* MainCoordinator.swift in Sources */,
 				8AFDD54629B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift in Sources */,
@@ -335,7 +361,9 @@
 				8AFDD53429B272C600CD329B /* BasicMainCoordinator.swift in Sources */,
 				8AFDD55029B29BB400CD329B /* RouterChildCoordinator.swift in Sources */,
 				8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */,
+				8A233BAD29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift in Sources */,
 				8AFDD53929B27E8000CD329B /* BasicPresentedViewController.swift in Sources */,
+				8A233BAA29B79D1900C4E35B /* SelfDeallocChildCoordinator.swift in Sources */,
 				8AFDD55929B29CC400CD329B /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

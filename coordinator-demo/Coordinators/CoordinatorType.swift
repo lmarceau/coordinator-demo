@@ -18,4 +18,7 @@ enum CoordinatorType {
 
     /// We keep reference of closures to execute foreach UIViewController pushed forward to deallocate matching Coordinator when navigating back.
     case router
+
+    /// Inverting the ownership of Coordinators to avoid manually deallocating coordinators
+    case selfDealloc
 }
