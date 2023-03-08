@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainViewButtonClickDelegate {
+class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 
@@ -23,14 +23,6 @@ class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainVi
         navigationController.pushViewController(viewController, animated: false)
     }
 
-    func button1Clicked() {
-        print("NavigationControllerDelegate Coordinator added")
-        let child = NavigationControllerDelegateChildCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
-        child.parentCoordinator = self
-        child.start()
-    }
-
     func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
@@ -39,6 +31,16 @@ class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainVi
                 break
             }
         }
+    }
+}
+
+extension NavigationControllerDelegateMainCoordinator: MainViewButtonClickDelegate {
+    func button1Clicked() {
+        print("NavigationControllerDelegate Coordinator added")
+        let child = NavigationControllerDelegateChildCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.parentCoordinator = self
+        child.start()
     }
 }
 

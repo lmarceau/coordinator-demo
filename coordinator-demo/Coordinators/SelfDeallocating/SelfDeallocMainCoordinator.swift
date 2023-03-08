@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
+class SelfDeallocMainCoordinator: Coordinator {
     weak var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController) {
@@ -19,7 +19,9 @@ class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         viewController.coordinator = self
         navigationController?.pushViewController(viewController, animated: false)
     }
+}
 
+extension SelfDeallocMainCoordinator: MainViewButtonClickDelegate {
     func button1Clicked() {
         print("SelfDealloc child Coordinator added")
         let child = SelfDeallocChildCoordinator(navigationController: navigationController!)

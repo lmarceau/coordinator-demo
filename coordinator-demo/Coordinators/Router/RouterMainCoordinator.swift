@@ -18,7 +18,6 @@ class RouterMainCoordinator: RouterCoordinator {
     }
 }
 
-// TODO: Laurie - put MainViewButtonClickDelegate in extensions for all
 extension RouterMainCoordinator: MainViewButtonClickDelegate {
     func button1Clicked() {
         print("Router child Coordinator added")
