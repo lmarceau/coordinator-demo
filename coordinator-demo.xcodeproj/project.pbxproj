@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A233BAA29B79D1900C4E35B /* SelfDeallocChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */; };
 		8A233BAD29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */; };
+		8A49601A29B933080053A54E /* RouterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49601929B933080053A54E /* RouterCoordinator.swift */; };
 		8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50129B2606100CD329B /* AppDelegate.swift */; };
 		8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50329B2606100CD329B /* SceneDelegate.swift */; };
 		8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50529B2606100CD329B /* MainViewController.swift */; };
@@ -21,7 +22,7 @@
 		8AFDD53929B27E8000CD329B /* BasicPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD53829B27E8000CD329B /* BasicPresentedViewController.swift */; };
 		8AFDD53D29B2864200CD329B /* BasicChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD53C29B2864200CD329B /* BasicChildCoordinator.swift */; };
 		8AFDD53F29B2893500CD329B /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD53E29B2893500CD329B /* CoordinatorType.swift */; };
-		8AFDD54329B292CA00CD329B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54229B292CA00CD329B /* MainCoordinator.swift */; };
+		8AFDD54329B292CA00CD329B /* MainViewButtonClickDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54229B292CA00CD329B /* MainViewButtonClickDelegate.swift */; };
 		8AFDD54629B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54529B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift */; };
 		8AFDD54829B2943D00CD329B /* NavigationControllerDelegateChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54729B2943D00CD329B /* NavigationControllerDelegateChildCoordinator.swift */; };
 		8AFDD54B29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54A29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocChildCoordinator.swift; sourceTree = "<group>"; };
 		8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocPresentedViewController.swift; sourceTree = "<group>"; };
+		8A49601929B933080053A54E /* RouterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD4FE29B2606100CD329B /* coordinator-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coordinator-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFDD50129B2606100CD329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFDD50329B2606100CD329B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		8AFDD53829B27E8000CD329B /* BasicPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPresentedViewController.swift; sourceTree = "<group>"; };
 		8AFDD53C29B2864200CD329B /* BasicChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicChildCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD53E29B2893500CD329B /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
-		8AFDD54229B292CA00CD329B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		8AFDD54229B292CA00CD329B /* MainViewButtonClickDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewButtonClickDelegate.swift; sourceTree = "<group>"; };
 		8AFDD54529B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegateMainCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD54729B2943D00CD329B /* NavigationControllerDelegateChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegateChildCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD54A29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavControllerDelegatePresentedViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +170,7 @@
 				8AFDD54029B2899A00CD329B /* Basic */,
 				8AFDD53129B272A000CD329B /* Coordinator.swift */,
 				8AFDD53E29B2893500CD329B /* CoordinatorType.swift */,
-				8AFDD54229B292CA00CD329B /* MainCoordinator.swift */,
+				8AFDD54229B292CA00CD329B /* MainViewButtonClickDelegate.swift */,
 				8AFDD54429B293EE00CD329B /* NavigationControllerDelegate */,
 				8AFDD54C29B29B7700CD329B /* Router */,
 			);
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFDD55429B29C9400CD329B /* Router.swift */,
+				8A49601929B933080053A54E /* RouterCoordinator.swift */,
 				8AFDD54D29B29B9500CD329B /* RouterMainCoordinator.swift */,
 				8AFDD54F29B29BB400CD329B /* RouterChildCoordinator.swift */,
 			);
@@ -348,7 +351,8 @@
 				8AFDD53229B272A000CD329B /* Coordinator.swift in Sources */,
 				8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */,
 				8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */,
-				8AFDD54329B292CA00CD329B /* MainCoordinator.swift in Sources */,
+				8AFDD54329B292CA00CD329B /* MainViewButtonClickDelegate.swift in Sources */,
+				8A49601A29B933080053A54E /* RouterCoordinator.swift in Sources */,
 				8AFDD54629B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift in Sources */,
 				8AFDD53D29B2864200CD329B /* BasicChildCoordinator.swift in Sources */,
 				8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */,

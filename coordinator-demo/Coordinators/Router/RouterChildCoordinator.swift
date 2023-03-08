@@ -7,24 +7,14 @@
 
 import UIKit
 
-class RouterChildCoordinator: Coordinator {
+// Laurie: This is a horizontal flow
+class RouterChildCoordinator: RouterCoordinator {
 
-    weak var parentCoordinator: RouterMainCoordinator?
+    let presentedViewController = RouterPresentedViewController()
 
-    var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func start() {
-        let viewController = RouterPresentedViewController()
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
-    }
-
-    func didFinish() {
-        parentCoordinator?.childDidFinish(self)
+    // We must override toPresentable() so it doesn't
+    // default to the router's navigationController
+    override func toPresentable() -> UIViewController {
+        return presentedViewController
     }
 }

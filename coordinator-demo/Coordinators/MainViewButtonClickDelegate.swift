@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol MainCoordinator: AnyObject {
+protocol MainViewButtonClickDelegate: AnyObject {
     func button1Clicked()
 }

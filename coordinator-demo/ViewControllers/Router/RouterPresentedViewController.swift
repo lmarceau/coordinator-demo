@@ -16,9 +16,4 @@ class RouterPresentedViewController: UIViewController {
 
         view.backgroundColor = .systemBrown
     }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        coordinator?.didFinish()
-    }
 }

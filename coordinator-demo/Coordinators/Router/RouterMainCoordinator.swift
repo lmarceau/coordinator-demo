@@ -7,38 +7,32 @@
 
 import UIKit
 
-class RouterMainCoordinator: Coordinator, MainCoordinator {
-    var childCoordinators = [Coordinator]()
+class RouterMainCoordinator: RouterCoordinator {
 
-    let router: Router
-    init(router: Router) {
-        self.router = router
+    lazy var mainViewController = MainViewController()
+
+    override init(router: Router) {
+        super.init(router: router)
+        mainViewController.coordinator = self
+        router.setRootModule(mainViewController, hideBar: false)
     }
+}
 
-    func start() {
-        let viewController = MainViewController()
-//        viewController.coordinator = self
-//        navigationController.pushViewController(viewController, animated: false)
-        router.push(viewController, animated: false, completion: {
-//            childDidFinish()
-        })
-    }
-
+// TODO: Laurie - put MainViewButtonClickDelegate in extensions for all
+extension RouterMainCoordinator: MainViewButtonClickDelegate {
     func button1Clicked() {
         print("Router child Coordinator added")
-//        let child = RouterChildCoordinator(navigationController: navigationController)
-//        childCoordinators.append(child)
-//        child.parentCoordinator = self
-//        child.start()
-    }
 
-    func childDidFinish(_ child: Coordinator?) {
-        for (index, coordinator) in childCoordinators.enumerated() {
-            if coordinator === child {
-                print("Router child Coordinator removed")
-                childCoordinators.remove(at: index)
-                break
-            }
+        let coordinator = RouterChildCoordinator(router: router)
+
+        // Maintain a strong reference to avoid deallocation
+        addChild(coordinator)
+        coordinator.start()
+
+        // Avoid retain cycles and don't forget to remove the child when popped
+        router.push(coordinator, animated: true) { [weak self, weak coordinator] in
+            self?.removeChild(coordinator)
+            print("Router child Coordinator removed")
         }
     }
 }

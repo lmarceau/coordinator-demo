@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelfDeallocMainCoordinator: Coordinator, MainCoordinator {
+class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
     weak var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController) {

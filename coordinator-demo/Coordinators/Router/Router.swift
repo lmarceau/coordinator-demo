@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Laurie - add explanation on each
 protocol Router: AnyObject, Presentable {
     var navigationController: UINavigationController { get }
 

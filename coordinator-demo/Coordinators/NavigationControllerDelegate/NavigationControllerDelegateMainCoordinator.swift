@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainCoordinator {
+class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainViewButtonClickDelegate {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 

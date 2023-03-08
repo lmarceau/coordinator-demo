@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainViewButtonClickDelegate?
 
     struct UX {
         static let spaceBetweenButton: CGFloat = 24
