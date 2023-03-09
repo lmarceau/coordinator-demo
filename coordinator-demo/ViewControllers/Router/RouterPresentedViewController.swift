@@ -9,7 +9,7 @@ import UIKit
 
 class RouterPresentedViewController: UIViewController {
 
-    weak var coordinator: RouterChildCoordinator?
+    weak var coordinator: RouterChildPushCoordinator?
     weak var delegate: ChildViewDataChanged?
     var data: ChildViewData
 

@@ -9,34 +9,15 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
-    var mainCoordinator: Coordinator?
-
-    // Change the coordinator you want to use for the demo here
-    let coordinatorType: CoordinatorType = .selfDealloc
+    var sceneCoordinator: SceneCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-
-        let navigationController = UINavigationController()
-        switch coordinatorType {
-        case .basic:
-            mainCoordinator = BasicMainCoordinator(navigationController: navigationController)
-        case .navigationControllerDelegate:
-            mainCoordinator = NavigationControllerDelegateMainCoordinator(navigationController: navigationController)
-        case .router:
-            let router = DefaultRouter(navigationController: navigationController)
-            mainCoordinator = RouterMainCoordinator(router: router)
-        case .selfDealloc:
-            mainCoordinator = SelfDeallocMainCoordinator(navigationController: navigationController)
-        }
-        mainCoordinator?.start()
-
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+        let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window.windowScene = windowScene
+        sceneCoordinator = SceneCoordinator(window: window)
+        sceneCoordinator?.start()
     }
 }
 

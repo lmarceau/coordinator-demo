@@ -41,6 +41,18 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         child.onDataChanged = { data in
             print("Basic Coordinator received modified data \(data)")
         }
-        child.start(viewData: data)
+        child.startPush(viewData: data)
+    }
+
+    func button2Clicked() {
+        let data = ChildViewData(data: 0)
+        print("Basic child Coordinator added with data \(data)")
+        let child = BasicChildCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.parentCoordinator = self
+        child.onDataChanged = { data in
+            print("Basic Coordinator received modified data \(data)")
+        }
+        child.startPresent(viewData: data)
     }
 }

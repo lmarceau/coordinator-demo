@@ -7,7 +7,10 @@
 
 import UIKit
 
-class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainViewButtonClickDelegate, UINavigationControllerDelegate {
+class NavigationControllerDelegateMainCoordinator: NSObject,
+                                                    Coordinator,
+                                                    MainViewButtonClickDelegate,
+                                                    UINavigationControllerDelegate {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 
@@ -43,7 +46,19 @@ class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainVi
         child.onDataChanged = { data in
             print("NavigationControllerDelegate Coordinator received modified data \(data)")
         }
-        child.start(data: data)
+        child.startPush(data: data)
+    }
+
+    func button2Clicked() {
+        let data = ChildViewData(data: 3)
+        print("NavigationControllerDelegate Coordinator added with data \(data)")
+        let child = NavigationControllerDelegateChildCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.parentCoordinator = self
+        child.onDataChanged = { data in
+            print("NavigationControllerDelegate Coordinator received modified data \(data)")
+        }
+        child.startPresent(data: data)
     }
 
     // MARK: - UINavigationControllerDelegate

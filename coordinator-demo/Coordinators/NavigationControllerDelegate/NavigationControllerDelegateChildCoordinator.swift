@@ -20,11 +20,18 @@ class NavigationControllerDelegateChildCoordinator: Coordinator, ChildViewDataCh
         self.navigationController = navigationController
     }
 
-    func start(data: ChildViewData) {
+    func startPush(data: ChildViewData) {
         let viewController = NavControllerDelegatePresentedViewController(data: data)
         viewController.coordinator = self
         viewController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
+    }
+
+    func startPresent(data: ChildViewData) {
+        let viewController = NavControllerDelegatePresentedViewController(data: data)
+        viewController.coordinator = self
+        viewController.delegate = self
+        navigationController.present(viewController, animated: true)
     }
 
     // MARK: - ChildViewDataChanged

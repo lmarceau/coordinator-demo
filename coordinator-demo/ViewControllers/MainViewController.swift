@@ -20,15 +20,15 @@ class MainViewController: UIViewController {
     }
 
     lazy var button2: UIButton = .build { button in
-        button.setTitle("todo: present vertical flow", for: .normal)
+        button.setTitle("Present VC for vertical flow", for: .normal)
     }
 
     lazy var button3: UIButton = .build { button in
-        button.setTitle("todo: present child of child then back", for: .normal)
+        button.setTitle("todo: Modal drag to dismiss", for: .normal)
     }
 
     lazy var button4: UIButton = .build { button in
-        button.setTitle("todo", for: .normal)
+        button.setTitle("todo: present child of child then back", for: .normal)
     }
 
     override func viewDidLoad() {
@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func button2Clicked() {
-        // coordinator?.button2Clicked()
+        coordinator?.button2Clicked()
     }
 
     @objc func button3Clicked() {

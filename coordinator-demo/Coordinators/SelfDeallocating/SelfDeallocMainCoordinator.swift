@@ -28,6 +28,16 @@ class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         child.onDataChanged = { data in
             print("SelfDealloc Coordinator received modified data \(data)")
         }
-        child.start(data: data)
+        child.startWithPush(data: data)
+    }
+
+    func button2Clicked() {
+        let data = ChildViewData(data: 7)
+        print("SelfDealloc child Coordinator added with data \(data)")
+        let child = SelfDeallocChildCoordinator(navigationController: navigationController!)
+        child.onDataChanged = { data in
+            print("SelfDealloc Coordinator received modified data \(data)")
+        }
+        child.startWithPresent(data: data)
     }
 }

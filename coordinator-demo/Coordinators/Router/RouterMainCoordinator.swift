@@ -21,7 +21,7 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
     func button1Clicked() {
         let data = ChildViewData(data: 5)
         print("Router child Coordinator added with data \(data)")
-        let coordinator = RouterChildCoordinator(router: router, data: data)
+        let coordinator = RouterChildPushCoordinator(router: router, data: data)
         coordinator.onDataChanged = { data in
             print("Router Coordinator received modified data \(data)")
         }
@@ -35,5 +35,18 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
             self?.removeChild(coordinator)
             print("Router child Coordinator removed")
         }
+    }
+
+    func button2Clicked() {
+        let data = ChildViewData(data: 5)
+        print("Router child Coordinator added with data \(data)")
+        let coordinator = RouterChildPresentCoordinator(router: router, data: data)
+        coordinator.onDataChanged = { data in
+            print("Router Coordinator received modified data \(data)")
+        }
+
+        addChild(coordinator)
+        coordinator.start()
+        router.present(coordinator, animated: true)
     }
 }

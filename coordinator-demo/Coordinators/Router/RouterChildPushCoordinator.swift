@@ -1,5 +1,5 @@
 //
-//  RouterChildCoordinator.swift
+//  RouterChildPushCoordinator.swift
 //  coordinator-demo
 //
 //  Created by Laurie Marceau on 2023-03-03.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class RouterChildCoordinator: RouterCoordinator, ChildViewDataChanged {
+// Horizontal flow
+class RouterChildPushCoordinator: RouterCoordinator, ChildViewDataChanged {
 
     var presentedViewController: RouterPresentedViewController
     var onDataChanged: ((ChildViewData) -> Void)?

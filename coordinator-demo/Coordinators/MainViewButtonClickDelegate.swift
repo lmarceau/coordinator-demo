@@ -9,4 +9,5 @@ import Foundation
 
 protocol MainViewButtonClickDelegate: AnyObject {
     func button1Clicked()
+    func button2Clicked()
 }

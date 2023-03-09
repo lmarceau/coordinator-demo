@@ -20,11 +20,18 @@ class SelfDeallocChildCoordinator: Coordinator, ChildViewDataChanged {
         didFinish()
     }
 
-    func start(data: ChildViewData) {
+    func startWithPush(data: ChildViewData) {
         let viewController = SelfDeallocPresentedViewController(data: data)
         viewController.coordinator = self
         viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func startWithPresent(data: ChildViewData) {
+        let viewController = SelfDeallocPresentedViewController(data: data)
+        viewController.coordinator = self
+        viewController.delegate = self
+        navigationController?.present(viewController, animated: true)
     }
 
     func didFinish() {
