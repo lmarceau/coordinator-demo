@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelfDeallocMainCoordinator: Coordinator {
+class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
     weak var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController) {
@@ -19,12 +19,14 @@ class SelfDeallocMainCoordinator: Coordinator {
         viewController.coordinator = self
         navigationController?.pushViewController(viewController, animated: false)
     }
-}
 
-extension SelfDeallocMainCoordinator: MainViewButtonClickDelegate {
+    // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
         print("SelfDealloc child Coordinator added")
         let child = SelfDeallocChildCoordinator(navigationController: navigationController!)
+        // TODO: Laurie - test delegate to send back information
+//        child.delegate = self
+        // back button will be a problem, to pass back data
         child.start()
     }
 }

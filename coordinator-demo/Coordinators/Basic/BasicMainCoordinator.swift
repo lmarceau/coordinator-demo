@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BasicMainCoordinator: Coordinator {
+class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 
@@ -30,9 +30,8 @@ class BasicMainCoordinator: Coordinator {
             }
         }
     }
-}
 
-extension BasicMainCoordinator: MainViewButtonClickDelegate {
+    // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
         print("Basic Coordinator added")
         let child = BasicChildCoordinator(navigationController: navigationController)

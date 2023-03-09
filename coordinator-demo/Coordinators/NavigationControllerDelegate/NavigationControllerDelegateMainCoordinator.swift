@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator {
+class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainViewButtonClickDelegate, UINavigationControllerDelegate {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 
@@ -32,9 +32,8 @@ class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator {
             }
         }
     }
-}
 
-extension NavigationControllerDelegateMainCoordinator: MainViewButtonClickDelegate {
+    // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
         print("NavigationControllerDelegate Coordinator added")
         let child = NavigationControllerDelegateChildCoordinator(navigationController: navigationController)
@@ -42,9 +41,8 @@ extension NavigationControllerDelegateMainCoordinator: MainViewButtonClickDelega
         child.parentCoordinator = self
         child.start()
     }
-}
 
-extension NavigationControllerDelegateMainCoordinator: UINavigationControllerDelegate {
+    // MARK: - UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         // Read the view controller we’re moving from.
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {

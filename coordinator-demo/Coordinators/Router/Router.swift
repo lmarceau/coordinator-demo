@@ -11,13 +11,19 @@ import UIKit
 /// It must also act as the delegate of the navigation controller so it can intercept back button presses and run the corresponding
 /// completion handler for the view controller that was popped.
 ///
-/// Module: A Presentable module
-/// Presentable: Can be a Router or a ViewController that we want to present
-protocol Router: AnyObject, Presentable {
+/// `Presentable` can be a Router or a ViewController that we want to present
+/// `Module`: a `Presentable` that can be presented, pushed or dismissed from the stack
+protocol Router: AnyObject, Presentable, UINavigationControllerDelegate {
+    /// The navigation controller of the router which is used for pushing and presenting `Presentable` modules
     var navigationController: UINavigationController { get }
 
+    /// The root view controller of the navigation controller, which is the first view controller on the navigation controller stack
     var rootViewController: UIViewController? { get }
 
+    /// Present a module for a vertical flow.
+    /// - Parameters:
+    ///   - module: The presentable module to present
+    ///   - animated: true means it will be animated
     func present(_ module: Presentable, animated: Bool)
 
     /// Dismiss a modile
@@ -27,9 +33,10 @@ protocol Router: AnyObject, Presentable {
     func dismissModule(animated: Bool, completion: (() -> Void)?)
 
     /// When a Presentable type is pushed, we gain access to the view controller to be pushed using the module.toPresentable() and store the completion
-    /// handler in a dictionary with the key being the view controller.
+    /// handler in a dictionary with the key being the view controller. UINavigationController presentables cannot be pushed unto the stack. The pushed module
+    /// will be on an horizontal flow.
     /// - Parameters:
-    ///   - module: The module to push
+    ///   - module: The presentable module to push
     ///   - animated: true means it will be animated
     ///   - completion: the completion that will be called when dismissing the module
     func push(_ module: Presentable, animated: Bool, completion: (() -> Void)?)
@@ -119,11 +126,8 @@ class DefaultRouter: NSObject, Router {
     func toPresentable() -> UIViewController {
         return navigationController
     }
-}
 
-// MARK: UINavigationControllerDelegate
-
-extension DefaultRouter: UINavigationControllerDelegate {
+    // MARK: - UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController,
                               didShow viewController: UIViewController,
                               animated: Bool) {

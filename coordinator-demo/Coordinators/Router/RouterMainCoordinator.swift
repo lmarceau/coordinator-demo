@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RouterMainCoordinator: RouterCoordinator {
+class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
 
     lazy var mainViewController = MainViewController()
 
@@ -16,12 +16,10 @@ class RouterMainCoordinator: RouterCoordinator {
         mainViewController.coordinator = self
         router.setRootModule(mainViewController, hideBar: false)
     }
-}
 
-extension RouterMainCoordinator: MainViewButtonClickDelegate {
+    // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
         print("Router child Coordinator added")
-
         let coordinator = RouterChildCoordinator(router: router)
 
         // Maintain a strong reference to avoid deallocation
