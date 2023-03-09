@@ -7,7 +7,12 @@
 
 import UIKit
 
-// Laurie - add explanation on each
+/// The router should be able to perform all possible navigation actions.
+/// It must also act as the delegate of the navigation controller so it can intercept back button presses and run the corresponding
+/// completion handler for the view controller that was popped.
+///
+/// Module: A Presentable module
+/// Presentable: Can be a Router or a ViewController that we want to present
 protocol Router: AnyObject, Presentable {
     var navigationController: UINavigationController { get }
 
@@ -15,14 +20,33 @@ protocol Router: AnyObject, Presentable {
 
     func present(_ module: Presentable, animated: Bool)
 
+    /// Dismiss a modile
+    /// - Parameters:
+    ///   - animated: true means it will be animated
+    ///   - completion: The completion to call once the module is dismissed
     func dismissModule(animated: Bool, completion: (() -> Void)?)
 
+    /// When a Presentable type is pushed, we gain access to the view controller to be pushed using the module.toPresentable() and store the completion
+    /// handler in a dictionary with the key being the view controller.
+    /// - Parameters:
+    ///   - module: The module to push
+    ///   - animated: true means it will be animated
+    ///   - completion: the completion that will be called when dismissing the module
     func push(_ module: Presentable, animated: Bool, completion: (() -> Void)?)
 
+    /// When a view controller is popped, either from the back button, the navigation controller delegate function determines which view controller was popped
+    /// and executes the corresponding completion handler.
+    /// - Parameter animated: true means it will be animated
     func popModule(animated: Bool)
 
+    /// Set the root module
+    /// - Parameters:
+    ///   - module: The module to set as root
+    ///   - hideBar: Hide the navigation bar or not
     func setRootModule(_ module: Presentable, hideBar: Bool)
 
+    /// Pop to the root module that was set with `setRootModule`
+    /// - Parameter animated: true means it will be animated
     func popToRootModule(animated: Bool)
 }
 

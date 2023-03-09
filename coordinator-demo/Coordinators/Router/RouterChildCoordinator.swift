@@ -7,7 +7,6 @@
 
 import UIKit
 
-// Laurie: This is a horizontal flow
 class RouterChildCoordinator: RouterCoordinator {
 
     let presentedViewController = RouterPresentedViewController()

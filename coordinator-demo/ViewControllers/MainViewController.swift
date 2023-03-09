@@ -16,22 +16,18 @@ class MainViewController: UIViewController {
     }
 
     lazy var button1: UIButton = .build { button in
-        button.setTitle("Push VC", for: .normal)
+        button.setTitle("Push VC for horizontal flow", for: .normal)
     }
 
     lazy var button2: UIButton = .build { button in
-        button.setTitle("todo", for: .normal)
+        button.setTitle("todo: present vertical flow", for: .normal)
     }
 
     lazy var button3: UIButton = .build { button in
-        button.setTitle("todo", for: .normal)
+        button.setTitle("todo: present child of child then back", for: .normal)
     }
 
     lazy var button4: UIButton = .build { button in
-        button.setTitle("todo", for: .normal)
-    }
-
-    lazy var button5: UIButton = .build { button in
         button.setTitle("todo", for: .normal)
     }
 
@@ -43,13 +39,11 @@ class MainViewController: UIViewController {
         button2.addTarget(self, action: #selector(button2Clicked), for: .touchUpInside)
         button3.addTarget(self, action: #selector(button3Clicked), for: .touchUpInside)
         button4.addTarget(self, action: #selector(button4Clicked), for: .touchUpInside)
-        button5.addTarget(self, action: #selector(button5Clicked), for: .touchUpInside)
 
         view.addSubview(button1)
         view.addSubview(button2)
         view.addSubview(button3)
         view.addSubview(button4)
-        view.addSubview(button5)
         NSLayoutConstraint.activate([
             button1.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: UX.spaceBetweenButton),
             button1.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -61,10 +55,7 @@ class MainViewController: UIViewController {
             button3.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             button4.topAnchor.constraint(equalTo: button3.bottomAnchor, constant: UX.spaceBetweenButton),
-            button4.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-
-            button5.topAnchor.constraint(equalTo: button4.bottomAnchor, constant: UX.spaceBetweenButton),
-            button5.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button4.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 
@@ -82,10 +73,6 @@ class MainViewController: UIViewController {
 
     @objc func button4Clicked() {
         // coordinator?.button4Clicked()
-    }
-
-    @objc func button5Clicked() {
-        // coordinator?.button5Clicked()
     }
 }
 
