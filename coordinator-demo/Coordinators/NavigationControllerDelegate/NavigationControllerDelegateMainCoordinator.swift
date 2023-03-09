@@ -35,11 +35,15 @@ class NavigationControllerDelegateMainCoordinator: NSObject, Coordinator, MainVi
 
     // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
-        print("NavigationControllerDelegate Coordinator added")
+        let data = ChildViewData(data: 3)
+        print("NavigationControllerDelegate Coordinator added with data \(data)")
         let child = NavigationControllerDelegateChildCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self
-        child.start()
+        child.onDataChanged = { data in
+            print("NavigationControllerDelegate Coordinator received modified data \(data)")
+        }
+        child.start(data: data)
     }
 
     // MARK: - UINavigationControllerDelegate

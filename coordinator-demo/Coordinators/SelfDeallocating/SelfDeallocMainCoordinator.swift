@@ -22,11 +22,12 @@ class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
 
     // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
-        print("SelfDealloc child Coordinator added")
+        let data = ChildViewData(data: 7)
+        print("SelfDealloc child Coordinator added with data \(data)")
         let child = SelfDeallocChildCoordinator(navigationController: navigationController!)
-        // TODO: Laurie - test delegate to send back information
-//        child.delegate = self
-        // back button will be a problem, to pass back data
-        child.start()
+        child.onDataChanged = { data in
+            print("SelfDealloc Coordinator received modified data \(data)")
+        }
+        child.start(data: data)
     }
 }

@@ -7,20 +7,29 @@
 
 import UIKit
 
-class NavigationControllerDelegateChildCoordinator: Coordinator {
+class NavigationControllerDelegateChildCoordinator: Coordinator, ChildViewDataChanged {
 
     weak var parentCoordinator: NavigationControllerDelegateMainCoordinator?
 
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    
+    var onDataChanged: ((ChildViewData) -> Void)?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
-    func start() {
-        let viewController = NavControllerDelegatePresentedViewController()
+    func start(data: ChildViewData) {
+        let viewController = NavControllerDelegatePresentedViewController(data: data)
         viewController.coordinator = self
+        viewController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
+    }
+
+    // MARK: - ChildViewDataChanged
+    func dataHasChanged(data: ChildViewData) {
+        guard let onDataChanged = onDataChanged else { return }
+        onDataChanged(data)
     }
 }

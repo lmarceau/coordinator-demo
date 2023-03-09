@@ -24,7 +24,7 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
     func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
-                print("Basic Coordinator removed")
+                print("Basic child Coordinator removed")
                 childCoordinators.remove(at: index)
                 break
             }
@@ -33,10 +33,14 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
 
     // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
-        print("Basic Coordinator added")
+        let data = ChildViewData(data: 0)
+        print("Basic child Coordinator added with data \(data)")
         let child = BasicChildCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self
-        child.start()
+        child.onDataChanged = { data in
+            print("Basic Coordinator received modified data \(data)")
+        }
+        child.start(viewData: data)
     }
 }

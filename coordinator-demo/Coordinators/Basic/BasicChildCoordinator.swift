@@ -7,24 +7,32 @@
 
 import UIKit
 
-class BasicChildCoordinator: Coordinator {
-
+class BasicChildCoordinator: Coordinator, ChildViewDataChanged {
     weak var parentCoordinator: BasicMainCoordinator?
 
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    
+    var onDataChanged: ((ChildViewData) -> Void)?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
-    func start() {
-        let viewController = BasicPresentedViewController()
+    func start(viewData: ChildViewData) {
+        let viewController = BasicPresentedViewController(data: viewData)
         viewController.coordinator = self
+        viewController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
     }
 
     func didFinish() {
         parentCoordinator?.childDidFinish(self)
+    }
+
+    // MARK: - ChildViewDataChanged
+    func dataHasChanged(data: ChildViewData) {
+        guard let onDataChanged = onDataChanged else { return }
+        onDataChanged(data)
     }
 }

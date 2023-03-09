@@ -19,8 +19,12 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
 
     // MARK: - MainViewButtonClickDelegate
     func button1Clicked() {
-        print("Router child Coordinator added")
-        let coordinator = RouterChildCoordinator(router: router)
+        let data = ChildViewData(data: 5)
+        print("Router child Coordinator added with data \(data)")
+        let coordinator = RouterChildCoordinator(router: router, data: data)
+        coordinator.onDataChanged = { data in
+            print("Router Coordinator received modified data \(data)")
+        }
 
         // Maintain a strong reference to avoid deallocation
         addChild(coordinator)

@@ -10,6 +10,8 @@
 		8A233BAA29B79D1900C4E35B /* SelfDeallocChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */; };
 		8A233BAD29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */; };
 		8A49601A29B933080053A54E /* RouterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49601929B933080053A54E /* RouterCoordinator.swift */; };
+		8AD00C1B29BA7B7800E2E3DF /* ChildViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C1A29BA7B7800E2E3DF /* ChildViewData.swift */; };
+		8AD00C1F29BA80B400E2E3DF /* ChildViewDataChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */; };
 		8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50129B2606100CD329B /* AppDelegate.swift */; };
 		8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50329B2606100CD329B /* SceneDelegate.swift */; };
 		8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50529B2606100CD329B /* MainViewController.swift */; };
@@ -48,6 +50,8 @@
 		8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocChildCoordinator.swift; sourceTree = "<group>"; };
 		8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocPresentedViewController.swift; sourceTree = "<group>"; };
 		8A49601929B933080053A54E /* RouterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterCoordinator.swift; sourceTree = "<group>"; };
+		8AD00C1A29BA7B7800E2E3DF /* ChildViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewData.swift; sourceTree = "<group>"; };
+		8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewDataChanged.swift; sourceTree = "<group>"; };
 		8AFDD4FE29B2606100CD329B /* coordinator-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coordinator-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFDD50129B2606100CD329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFDD50329B2606100CD329B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,14 @@
 			path = SelfDeallocating;
 			sourceTree = "<group>";
 		};
+		8AD00C1929BA7B6500E2E3DF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8AD00C1A29BA7B7800E2E3DF /* ChildViewData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		8AFDD4F529B2606100CD329B = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +134,7 @@
 		8AFDD50029B2606100CD329B /* coordinator-demo */ = {
 			isa = PBXGroup;
 			children = (
+				8AD00C1929BA7B6500E2E3DF /* Data */,
 				8AFDD53B29B27FEB00CD329B /* Coordinators */,
 				8AFDD53529B27C3500CD329B /* Extensions */,
 				8AFDD55729B29CBD00CD329B /* Protocol */,
@@ -234,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFDD55829B29CC400CD329B /* Presentable.swift */,
+				8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -347,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD00C1B29BA7B7800E2E3DF /* ChildViewData.swift in Sources */,
 				8AFDD53729B27C4200CD329B /* UIViewExtension.swift in Sources */,
 				8AFDD53229B272A000CD329B /* Coordinator.swift in Sources */,
 				8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */,
@@ -354,6 +369,7 @@
 				8AFDD54329B292CA00CD329B /* MainViewButtonClickDelegate.swift in Sources */,
 				8A49601A29B933080053A54E /* RouterCoordinator.swift in Sources */,
 				8AFDD54629B2940800CD329B /* NavigationControllerDelegateMainCoordinator.swift in Sources */,
+				8AD00C1F29BA80B400E2E3DF /* ChildViewDataChanged.swift in Sources */,
 				8AFDD53D29B2864200CD329B /* BasicChildCoordinator.swift in Sources */,
 				8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */,
 				8AFDD54B29B298EB00CD329B /* NavControllerDelegatePresentedViewController.swift in Sources */,
