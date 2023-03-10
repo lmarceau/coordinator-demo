@@ -55,4 +55,14 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         }
         child.startPresent(viewData: data)
     }
+
+    func button3Clicked() {
+        print("not implemented yet")
+    }
+
+    func button4Clicked() {
+        let url = URL(string: "deeplink-example://google.com/")!
+        print("calling deeplink \(url)")
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }

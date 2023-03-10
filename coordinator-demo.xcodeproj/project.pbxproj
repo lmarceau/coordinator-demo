@@ -10,6 +10,7 @@
 		8A233BAA29B79D1900C4E35B /* SelfDeallocChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */; };
 		8A233BAD29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */; };
 		8A49601A29B933080053A54E /* RouterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49601929B933080053A54E /* RouterCoordinator.swift */; };
+		8A4AD1D629BBC3E3004AAC88 /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4AD1D529BBC3E3004AAC88 /* DeepLinkOption.swift */; };
 		8AD00C1B29BA7B7800E2E3DF /* ChildViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C1A29BA7B7800E2E3DF /* ChildViewData.swift */; };
 		8AD00C1F29BA80B400E2E3DF /* ChildViewDataChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */; };
 		8AD00C2129BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C2029BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift */; };
@@ -52,6 +53,7 @@
 		8A233BA929B79D1900C4E35B /* SelfDeallocChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocChildCoordinator.swift; sourceTree = "<group>"; };
 		8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocPresentedViewController.swift; sourceTree = "<group>"; };
 		8A49601929B933080053A54E /* RouterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterCoordinator.swift; sourceTree = "<group>"; };
+		8A4AD1D529BBC3E3004AAC88 /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
 		8AD00C1A29BA7B7800E2E3DF /* ChildViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewData.swift; sourceTree = "<group>"; };
 		8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewDataChanged.swift; sourceTree = "<group>"; };
 		8AD00C2029BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildPresentCoordinator.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				8AFDD55729B29CBD00CD329B /* Protocol */,
 				8AFDD53A29B27FDD00CD329B /* ViewControllers */,
 				8AFDD50129B2606100CD329B /* AppDelegate.swift */,
+				8A4AD1D529BBC3E3004AAC88 /* DeepLinkOption.swift */,
 				8AFDD50329B2606100CD329B /* SceneDelegate.swift */,
 				8AD00C2229BA8F8700E2E3DF /* SceneCoordinator.swift */,
 				8AFDD50A29B2606200CD329B /* Assets.xcassets */,
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AD00C1B29BA7B7800E2E3DF /* ChildViewData.swift in Sources */,
+				8A4AD1D629BBC3E3004AAC88 /* DeepLinkOption.swift in Sources */,
 				8AFDD53729B27C4200CD329B /* UIViewExtension.swift in Sources */,
 				8AFDD53229B272A000CD329B /* Coordinator.swift in Sources */,
 				8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */,

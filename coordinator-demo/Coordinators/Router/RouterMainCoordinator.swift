@@ -49,4 +49,14 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
         coordinator.start()
         router.present(coordinator, animated: true)
     }
+
+    func button3Clicked() {
+        print("not implemented yet")
+    }
+
+    func button4Clicked() {
+        let url = URL(string: "deeplink-example://google.com/")!
+        print("calling deeplink \(url)")
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }

@@ -24,11 +24,11 @@ class MainViewController: UIViewController {
     }
 
     lazy var button3: UIButton = .build { button in
-        button.setTitle("todo: Modal drag to dismiss", for: .normal)
+        button.setTitle("Present two level deep then back", for: .normal)
     }
 
     lazy var button4: UIButton = .build { button in
-        button.setTitle("todo: present child of child then back", for: .normal)
+        button.setTitle("Deeplink test", for: .normal)
     }
 
     override func viewDidLoad() {
@@ -68,11 +68,11 @@ class MainViewController: UIViewController {
     }
 
     @objc func button3Clicked() {
-        // coordinator?.button3Clicked()
+         coordinator?.button3Clicked()
     }
 
     @objc func button4Clicked() {
-        // coordinator?.button4Clicked()
+         coordinator?.button4Clicked()
     }
 }
 

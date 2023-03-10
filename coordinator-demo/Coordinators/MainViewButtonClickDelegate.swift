@@ -10,4 +10,6 @@ import Foundation
 protocol MainViewButtonClickDelegate: AnyObject {
     func button1Clicked()
     func button2Clicked()
+    func button3Clicked()
+    func button4Clicked()
 }

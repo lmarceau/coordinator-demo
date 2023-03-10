@@ -61,6 +61,16 @@ class NavigationControllerDelegateMainCoordinator: NSObject,
         child.startPresent(data: data)
     }
 
+    func button3Clicked() {
+        print("not implemented yet")
+    }
+
+    func button4Clicked() {
+        let url = URL(string: "deeplink-example://google.com/")!
+        print("calling deeplink \(url)")
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
     // MARK: - UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         // Read the view controller we’re moving from.

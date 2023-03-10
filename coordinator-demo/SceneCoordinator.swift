@@ -37,4 +37,8 @@ class SceneCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
+
+    func start(with: DeepLinkOption?) {
+        // TODO: Laurie implement start(with: DeepLinkOption?
+    }
 }
