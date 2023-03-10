@@ -7,20 +7,26 @@
 
 import UIKit
 
+/// Each scene has it's own scene coordinator, which is the root coordinator for a scene.
 class SceneCoordinator: Coordinator {
 
-    let window: UIWindow
+    let window: UIWindow?
     var mainCoordinator: Coordinator?
 
     // Change the coordinator you want to use for the demo here
-    let coordinatorType: CoordinatorType = .selfDealloc
+    let coordinatorType: CoordinatorType = .basic
 
-    init(window: UIWindow) {
-        self.window = window
+    init(scene: UIScene) {
+        guard let windowScene = (scene as? UIWindowScene) else {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            return
+        }
+
+        self.window = UIWindow(windowScene: windowScene)
     }
 
     func start() {
-        let navigationController = UINavigationController()
+        let navigationController = createNavigationController()
         switch coordinatorType {
         case .basic:
             mainCoordinator = BasicMainCoordinator(navigationController: navigationController)
@@ -34,11 +40,19 @@ class SceneCoordinator: Coordinator {
         }
         mainCoordinator?.start()
 
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
-    func start(with: DeepLinkOption?) {
-        // TODO: Laurie implement start(with: DeepLinkOption?
+    func start(with option: DeepLinkOption?) {
+        mainCoordinator?.start(with: option)
+    }
+
+    // MARK: - Helpers
+    private func createNavigationController() -> UINavigationController {
+        let navigationController = UINavigationController()
+        navigationController.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+
+        return navigationController
     }
 }

@@ -21,6 +21,19 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         navigationController.pushViewController(viewController, animated: false)
     }
 
+    func start(with option: DeepLinkOption?) {
+        guard let option = option else { return }
+        switch option {
+        case .main: break // do nothing in this case
+        case .child: pushChild()
+        default:
+            // TODO: Laurie - there's no child added at this point. Needs adjustment
+            childCoordinators.forEach { coordinator in
+                coordinator.start(with: option)
+            }
+        }
+    }
+
     func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
@@ -32,7 +45,7 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
     }
 
     // MARK: - MainViewButtonClickDelegate
-    func button1Clicked() {
+    func pushChild() {
         let data = ChildViewData(data: 0)
         print("Basic child Coordinator added with data \(data)")
         let child = BasicChildCoordinator(navigationController: navigationController)
@@ -44,7 +57,7 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         child.startPush(viewData: data)
     }
 
-    func button2Clicked() {
+    func presentChild() {
         let data = ChildViewData(data: 0)
         print("Basic child Coordinator added with data \(data)")
         let child = BasicChildCoordinator(navigationController: navigationController)
@@ -56,11 +69,11 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         child.startPresent(viewData: data)
     }
 
-    func button3Clicked() {
-        print("not implemented yet")
+    func presentChildOfChild(with url: URL?) {
+        start(with: .childOfChild(url))
     }
 
-    func button4Clicked() {
+    func callDeeplinkExample() {
         let url = URL(string: "deeplink-example://google.com/")!
         print("calling deeplink \(url)")
         UIApplication.shared.open(url, options: [:], completionHandler: nil)

@@ -35,10 +35,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemGray
-        button1.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
-        button2.addTarget(self, action: #selector(button2Clicked), for: .touchUpInside)
-        button3.addTarget(self, action: #selector(button3Clicked), for: .touchUpInside)
-        button4.addTarget(self, action: #selector(button4Clicked), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(pushChild), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(presentChild), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(presentChildOfChild), for: .touchUpInside)
+        button4.addTarget(self, action: #selector(callDeeplinkExample), for: .touchUpInside)
 
         view.addSubview(button1)
         view.addSubview(button2)
@@ -59,20 +59,21 @@ class MainViewController: UIViewController {
         ])
     }
 
-    @objc func button1Clicked() {
-        coordinator?.button1Clicked()
+    @objc func pushChild() {
+        coordinator?.pushChild()
     }
 
-    @objc func button2Clicked() {
-        coordinator?.button2Clicked()
+    @objc func presentChild() {
+        coordinator?.presentChild()
     }
 
-    @objc func button3Clicked() {
-         coordinator?.button3Clicked()
+    @objc func presentChildOfChild() {
+        let url = URL(string: "www.firefox.com")
+        coordinator?.presentChildOfChild(with: url)
     }
 
-    @objc func button4Clicked() {
-         coordinator?.button4Clicked()
+    @objc func callDeeplinkExample() {
+        coordinator?.callDeeplinkExample()
     }
 }
 

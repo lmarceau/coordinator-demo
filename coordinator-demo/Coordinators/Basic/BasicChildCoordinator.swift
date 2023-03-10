@@ -37,6 +37,16 @@ class BasicChildCoordinator: Coordinator, ChildViewDataChanged {
         parentCoordinator?.childDidFinish(self)
     }
 
+    func childDidFinish(_ child: Coordinator?) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                print("Basic child of child Coordinator removed")
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+    }
+
     // MARK: - ChildViewDataChanged
     func dataHasChanged(data: ChildViewData) {
         guard let onDataChanged = onDataChanged else { return }

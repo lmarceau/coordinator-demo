@@ -11,6 +11,8 @@
 		8A233BAD29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */; };
 		8A49601A29B933080053A54E /* RouterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49601929B933080053A54E /* RouterCoordinator.swift */; };
 		8A4AD1D629BBC3E3004AAC88 /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4AD1D529BBC3E3004AAC88 /* DeepLinkOption.swift */; };
+		8A4AD1DA29BBD544004AAC88 /* BasicChildOfChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4AD1D929BBD544004AAC88 /* BasicChildOfChildCoordinator.swift */; };
+		8A4AD1DC29BBD595004AAC88 /* BasicChildOfChildPresentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4AD1DB29BBD595004AAC88 /* BasicChildOfChildPresentedVC.swift */; };
 		8AD00C1B29BA7B7800E2E3DF /* ChildViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C1A29BA7B7800E2E3DF /* ChildViewData.swift */; };
 		8AD00C1F29BA80B400E2E3DF /* ChildViewDataChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */; };
 		8AD00C2129BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C2029BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift */; };
@@ -54,6 +56,8 @@
 		8A233BAC29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocPresentedViewController.swift; sourceTree = "<group>"; };
 		8A49601929B933080053A54E /* RouterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterCoordinator.swift; sourceTree = "<group>"; };
 		8A4AD1D529BBC3E3004AAC88 /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
+		8A4AD1D929BBD544004AAC88 /* BasicChildOfChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicChildOfChildCoordinator.swift; sourceTree = "<group>"; };
+		8A4AD1DB29BBD595004AAC88 /* BasicChildOfChildPresentedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicChildOfChildPresentedVC.swift; sourceTree = "<group>"; };
 		8AD00C1A29BA7B7800E2E3DF /* ChildViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewData.swift; sourceTree = "<group>"; };
 		8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewDataChanged.swift; sourceTree = "<group>"; };
 		8AD00C2029BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildPresentCoordinator.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			children = (
 				8AFDD53329B272C500CD329B /* BasicMainCoordinator.swift */,
 				8AFDD53C29B2864200CD329B /* BasicChildCoordinator.swift */,
+				8A4AD1D929BBD544004AAC88 /* BasicChildOfChildCoordinator.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFDD53829B27E8000CD329B /* BasicPresentedViewController.swift */,
+				8A4AD1DB29BBD595004AAC88 /* BasicChildOfChildPresentedVC.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 				8A4AD1D629BBC3E3004AAC88 /* DeepLinkOption.swift in Sources */,
 				8AFDD53729B27C4200CD329B /* UIViewExtension.swift in Sources */,
 				8AFDD53229B272A000CD329B /* Coordinator.swift in Sources */,
+				8A4AD1DC29BBD595004AAC88 /* BasicChildOfChildPresentedVC.swift in Sources */,
 				8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */,
 				8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */,
 				8AD00C2129BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift in Sources */,
@@ -394,6 +401,7 @@
 				8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */,
 				8A233BAD29B79D4B00C4E35B /* SelfDeallocPresentedViewController.swift in Sources */,
 				8AFDD53929B27E8000CD329B /* BasicPresentedViewController.swift in Sources */,
+				8A4AD1DA29BBD544004AAC88 /* BasicChildOfChildCoordinator.swift in Sources */,
 				8AD00C2329BA8F8700E2E3DF /* SceneCoordinator.swift in Sources */,
 				8A233BAA29B79D1900C4E35B /* SelfDeallocChildCoordinator.swift in Sources */,
 				8AFDD55929B29CC400CD329B /* Presentable.swift in Sources */,

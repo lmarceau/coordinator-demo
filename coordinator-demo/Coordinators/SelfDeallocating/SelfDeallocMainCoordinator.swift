@@ -20,8 +20,22 @@ class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         navigationController?.pushViewController(viewController, animated: false)
     }
 
+    func start(with option: DeepLinkOption?) {
+        guard let option = option else { return }
+        switch option {
+        case .main: break // do nothing in this case
+        case .child: pushChild()
+        default:
+            // No child, cannot recursively search for deeplink options
+            break
+//            childCoordinators.forEach { coordinator in
+//                coordinator.start(with: option)
+//            }
+        }
+    }
+
     // MARK: - MainViewButtonClickDelegate
-    func button1Clicked() {
+    func pushChild() {
         let data = ChildViewData(data: 7)
         print("SelfDealloc child Coordinator added with data \(data)")
         let child = SelfDeallocChildCoordinator(navigationController: navigationController!)
@@ -31,7 +45,7 @@ class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         child.startWithPush(data: data)
     }
 
-    func button2Clicked() {
+    func presentChild() {
         let data = ChildViewData(data: 7)
         print("SelfDealloc child Coordinator added with data \(data)")
         let child = SelfDeallocChildCoordinator(navigationController: navigationController!)
@@ -41,11 +55,11 @@ class SelfDeallocMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         child.startWithPresent(data: data)
     }
 
-    func button3Clicked() {
-        print("not implemented yet")
+    func presentChildOfChild(with url: URL?) {
+        start(with: .childOfChild(url))
     }
 
-    func button4Clicked() {
+    func callDeeplinkExample() {
         let url = URL(string: "deeplink-example://google.com/")!
         print("calling deeplink \(url)")
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
