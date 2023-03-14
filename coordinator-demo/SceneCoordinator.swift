@@ -14,7 +14,7 @@ class SceneCoordinator: Coordinator {
     var mainCoordinator: Coordinator?
 
     // Change the coordinator you want to use for the demo here
-    let coordinatorType: CoordinatorType = .basic
+    let coordinatorType: CoordinatorType = .router
 
     init(scene: UIScene) {
         guard let windowScene = (scene as? UIWindowScene) else {
@@ -44,7 +44,6 @@ class SceneCoordinator: Coordinator {
         window?.makeKeyAndVisible()
     }
 
-    // TODO: Laurie: Should rename to handle(with option: DeepLinkOption?)
     func handle(with option: DeepLinkOption) -> Bool {
         return mainCoordinator?.handle(with: option) ?? false
     }

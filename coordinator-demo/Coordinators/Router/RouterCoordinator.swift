@@ -25,8 +25,16 @@ open class RouterCoordinator: NSObject, Coordinatable, Coordinator {
 
     open var onCompletion: (() -> Void)?
     open func start() {}
+
+    // Loop through existing child coordinators to see if we handle deeplink
     func handle(with option: DeepLinkOption) -> Bool {
-        return true
+        for child in childCoordinators {
+            let isHandled = child.handle(with: option)
+            if isHandled {
+                return isHandled
+            }
+        }
+        return false
     }
 
     func addChild(_ coordinator: RouterCoordinator) {

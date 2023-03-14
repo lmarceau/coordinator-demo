@@ -18,15 +18,20 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
     }
 
     override func handle(with option: DeepLinkOption) -> Bool {
+        let isHandled = super.handle(with: option)
+        guard !isHandled else { return isHandled }
+
+        // If not existing, check if we should support the deeplink
+        // return false if not handled, or true if handled
         switch option {
-        case .main: break // do nothing in this case
         case .child: pushChild()
-        default:
-            break
-//            childCoordinators.forEach { coordinator in
-//                coordinator.start(with: option)
-//            }
+        case .childOfChild:
+            let child = RouterChildPushCoordinator(router: router, data: ChildViewData(data: 5))
+            addChild(child)
+            return child.handle(with: option)
+        default: break
         }
+
         return true
     }
 
@@ -64,7 +69,7 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
     }
 
     func presentChildOfChild(with url: URL?) {
-        handle(with: .childOfChild(url))
+        _ = handle(with: .childOfChild(url))
     }
 
     func callDeeplinkExample() {

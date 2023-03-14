@@ -17,6 +17,8 @@
 		8AD00C1F29BA80B400E2E3DF /* ChildViewDataChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */; };
 		8AD00C2129BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C2029BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift */; };
 		8AD00C2329BA8F8700E2E3DF /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C2229BA8F8700E2E3DF /* SceneCoordinator.swift */; };
+		8AD4923129C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923029C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift */; };
+		8AD4923329C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923229C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift */; };
 		8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50129B2606100CD329B /* AppDelegate.swift */; };
 		8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50329B2606100CD329B /* SceneDelegate.swift */; };
 		8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50529B2606100CD329B /* MainViewController.swift */; };
@@ -62,6 +64,8 @@
 		8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewDataChanged.swift; sourceTree = "<group>"; };
 		8AD00C2029BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildPresentCoordinator.swift; sourceTree = "<group>"; };
 		8AD00C2229BA8F8700E2E3DF /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		8AD4923029C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildOfChildCoordinator.swift; sourceTree = "<group>"; };
+		8AD4923229C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildOfChildPresentedVC.swift; sourceTree = "<group>"; };
 		8AFDD4FE29B2606100CD329B /* coordinator-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coordinator-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFDD50129B2606100CD329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFDD50329B2606100CD329B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 				8AFDD54D29B29B9500CD329B /* RouterMainCoordinator.swift */,
 				8AFDD54F29B29BB400CD329B /* RouterChildPushCoordinator.swift */,
 				8AD00C2029BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift */,
+				8AD4923029C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */,
+				8AD4923229C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -385,11 +391,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AD00C1B29BA7B7800E2E3DF /* ChildViewData.swift in Sources */,
+				8AD4923329C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift in Sources */,
 				8A4AD1D629BBC3E3004AAC88 /* DeepLinkOption.swift in Sources */,
 				8AFDD53729B27C4200CD329B /* UIViewExtension.swift in Sources */,
 				8AFDD53229B272A000CD329B /* Coordinator.swift in Sources */,
 				8A4AD1DC29BBD595004AAC88 /* BasicChildOfChildPresentedVC.swift in Sources */,
 				8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */,
+				8AD4923129C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift in Sources */,
 				8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */,
 				8AD00C2129BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift in Sources */,
 				8AFDD54329B292CA00CD329B /* MainViewButtonClickDelegate.swift in Sources */,
