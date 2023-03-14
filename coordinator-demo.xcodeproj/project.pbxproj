@@ -19,12 +19,15 @@
 		8AD00C2329BA8F8700E2E3DF /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD00C2229BA8F8700E2E3DF /* SceneCoordinator.swift */; };
 		8AD4923129C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923029C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift */; };
 		8AD4923329C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923229C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift */; };
+		8AD4923529C0EC8600EFC3BB /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923429C0EC8600EFC3BB /* RouterTests.swift */; };
+		8AD4923729C0EE1400EFC3BB /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923629C0EE1400EFC3BB /* NavigationController.swift */; };
+		8AD4923929C10F5500EFC3BB /* RouterCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923829C10F5500EFC3BB /* RouterCoordinatorTests.swift */; };
+		8AD4923B29C11B6E00EFC3BB /* RouterMainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4923A29C11B6E00EFC3BB /* RouterMainCoordinatorTests.swift */; };
 		8AFDD50229B2606100CD329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50129B2606100CD329B /* AppDelegate.swift */; };
 		8AFDD50429B2606100CD329B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50329B2606100CD329B /* SceneDelegate.swift */; };
 		8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD50529B2606100CD329B /* MainViewController.swift */; };
 		8AFDD50B29B2606200CD329B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFDD50A29B2606200CD329B /* Assets.xcassets */; };
 		8AFDD50E29B2606200CD329B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AFDD50C29B2606200CD329B /* LaunchScreen.storyboard */; };
-		8AFDD51929B2606200CD329B /* coordinator_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD51829B2606200CD329B /* coordinator_demoTests.swift */; };
 		8AFDD53229B272A000CD329B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD53129B272A000CD329B /* Coordinator.swift */; };
 		8AFDD53429B272C600CD329B /* BasicMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD53329B272C500CD329B /* BasicMainCoordinator.swift */; };
 		8AFDD53729B27C4200CD329B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD53629B27C4200CD329B /* UIViewExtension.swift */; };
@@ -66,6 +69,10 @@
 		8AD00C2229BA8F8700E2E3DF /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		8AD4923029C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildOfChildCoordinator.swift; sourceTree = "<group>"; };
 		8AD4923229C0E2A900EFC3BB /* RouterChildOfChildPresentedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildOfChildPresentedVC.swift; sourceTree = "<group>"; };
+		8AD4923429C0EC8600EFC3BB /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		8AD4923629C0EE1400EFC3BB /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		8AD4923829C10F5500EFC3BB /* RouterCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterCoordinatorTests.swift; sourceTree = "<group>"; };
+		8AD4923A29C11B6E00EFC3BB /* RouterMainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMainCoordinatorTests.swift; sourceTree = "<group>"; };
 		8AFDD4FE29B2606100CD329B /* coordinator-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coordinator-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFDD50129B2606100CD329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFDD50329B2606100CD329B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +81,6 @@
 		8AFDD50D29B2606200CD329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AFDD50F29B2606200CD329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AFDD51429B2606200CD329B /* coordinator-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "coordinator-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AFDD51829B2606200CD329B /* coordinator_demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coordinator_demoTests.swift; sourceTree = "<group>"; };
 		8AFDD53129B272A000CD329B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8AFDD53329B272C500CD329B /* BasicMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMainCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD53629B27C4200CD329B /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -175,7 +181,9 @@
 		8AFDD51729B2606200CD329B /* coordinator-demoTests */ = {
 			isa = PBXGroup;
 			children = (
-				8AFDD51829B2606200CD329B /* coordinator_demoTests.swift */,
+				8AD4923429C0EC8600EFC3BB /* RouterTests.swift */,
+				8AD4923829C10F5500EFC3BB /* RouterCoordinatorTests.swift */,
+				8AD4923A29C11B6E00EFC3BB /* RouterMainCoordinatorTests.swift */,
 			);
 			path = "coordinator-demoTests";
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 			children = (
 				8AFDD55829B29CC400CD329B /* Presentable.swift */,
 				8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */,
+				8AD4923629C0EE1400EFC3BB /* NavigationController.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -399,6 +408,7 @@
 				8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */,
 				8AD4923129C0E1F200EFC3BB /* RouterChildOfChildCoordinator.swift in Sources */,
 				8AFDD50629B2606100CD329B /* MainViewController.swift in Sources */,
+				8AD4923729C0EE1400EFC3BB /* NavigationController.swift in Sources */,
 				8AD00C2129BA8BDC00E2E3DF /* RouterChildPresentCoordinator.swift in Sources */,
 				8AFDD54329B292CA00CD329B /* MainViewButtonClickDelegate.swift in Sources */,
 				8A49601A29B933080053A54E /* RouterCoordinator.swift in Sources */,
@@ -428,7 +438,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AFDD51929B2606200CD329B /* coordinator_demoTests.swift in Sources */,
+				8AD4923529C0EC8600EFC3BB /* RouterTests.swift in Sources */,
+				8AD4923B29C11B6E00EFC3BB /* RouterMainCoordinatorTests.swift in Sources */,
+				8AD4923929C10F5500EFC3BB /* RouterCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

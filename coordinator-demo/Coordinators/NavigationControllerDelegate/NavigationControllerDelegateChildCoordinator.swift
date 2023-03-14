@@ -35,7 +35,8 @@ class NavigationControllerDelegateChildCoordinator: Coordinator, ChildViewDataCh
     }
     
     func handle(with option: DeepLinkOption) -> Bool {
-        return true
+        // TODO: not implemented yet
+        return false
     }
 
     // MARK: - ChildViewDataChanged

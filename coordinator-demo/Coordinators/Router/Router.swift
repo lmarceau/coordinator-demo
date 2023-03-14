@@ -15,7 +15,7 @@ import UIKit
 /// `Module`: a `Presentable` that can be presented, pushed or dismissed from the stack
 protocol Router: AnyObject, Presentable, UINavigationControllerDelegate {
     /// The navigation controller of the router which is used for pushing and presenting `Presentable` modules
-    var navigationController: UINavigationController { get }
+    var navigationController: NavigationController { get }
 
     /// The root view controller of the navigation controller, which is the first view controller on the navigation controller stack
     var rootViewController: UIViewController? { get }
@@ -64,9 +64,9 @@ class DefaultRouter: NSObject, Router {
         return navigationController.viewControllers.first
     }
 
-    let navigationController: UINavigationController
+    let navigationController: NavigationController
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: NavigationController) {
         self.navigationController = navigationController
         self.completions = [:]
         super.init()

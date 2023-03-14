@@ -27,16 +27,8 @@ class NavigationControllerDelegateMainCoordinator: NSObject,
     }
 
     func handle(with option: DeepLinkOption) -> Bool {
-        switch option {
-        case .main: break // do nothing in this case
-        case .child: pushChild()
-        default:
-            break
-//            childCoordinators.forEach { coordinator in
-//                coordinator.start(with: option)
-//            }
-        }
-        return true
+        // TODO: not implemented yet
+        return false
     }
 
     func childDidFinish(_ child: Coordinator?) {
@@ -75,7 +67,7 @@ class NavigationControllerDelegateMainCoordinator: NSObject,
     }
 
     func presentChildOfChild(with url: URL?) {
-        handle(with: .childOfChild(url))
+        _ = handle(with: .childOfChild(url))
     }
 
     func callDeeplinkExample() {
