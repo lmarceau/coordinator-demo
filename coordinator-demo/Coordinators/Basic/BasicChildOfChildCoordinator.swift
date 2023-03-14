@@ -17,14 +17,16 @@ class BasicChildOfChildCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    func start(with option: DeepLinkOption?) {
-        guard let option = option else { return }
+    func handle(with option: DeepLinkOption) -> Bool {
         switch option {
         case .childOfChild(let url):
             presentChildOfChild(url)
+            return true
         default:
             break
         }
+
+        return false
     }
 
     func presentChildOfChild(_ url: URL?) {

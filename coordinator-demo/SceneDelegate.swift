@@ -21,18 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// Asks the delegate to open one or more URLs.
     func scene(_ scene: UIScene,
                openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        guard let url = URLContexts.first?.url else { return }
+        guard let url = URLContexts.first?.url, let deepLink = DeepLinkOption.build(with: url) else { return }
 
-        let deepLink = DeepLinkOption.build(with: url)
-        sceneCoordinator?.start(with: deepLink)
+        _ = sceneCoordinator?.handle(with: deepLink)
     }
 
     /// Tells the delegate to handle the specified Handoff-related activity.
     /// Use this method to update the specified scene with the data from the provided activity object.
     /// UIKit calls this method on your app’s main thread only after it receives all of the data for an activity object, which might originate from a different device.
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        let deepLink = DeepLinkOption.build(with: userActivity)
-        sceneCoordinator?.start(with: deepLink)
+        guard let deepLink = DeepLinkOption.build(with: userActivity) else { return }
+        _ = sceneCoordinator?.handle(with: deepLink)
     }
 
     /// Asks the delegate to perform the user-selected action.
@@ -47,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         DispatchQueue.main.async {
-            self.sceneCoordinator?.start(with: deepLink)
+            _ = self.sceneCoordinator?.handle(with: deepLink)
             completionHandler(true)
         }
     }
@@ -61,9 +60,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.scene(scene, continue: userActivity)
         } else if !connectionOptions.urlContexts.isEmpty {
             self.scene(scene, openURLContexts: connectionOptions.urlContexts)
-        } else if let shortcutItem = connectionOptions.shortcutItem {
-            let deepLink = DeepLinkOption.build(with: shortcutItem)
-            sceneCoordinator?.start(with: deepLink)
+        } else if let shortcutItem = connectionOptions.shortcutItem,
+                  let deepLink = DeepLinkOption.build(with: shortcutItem) {
+            _ =  sceneCoordinator?.handle(with: deepLink)
         }
     }
 }

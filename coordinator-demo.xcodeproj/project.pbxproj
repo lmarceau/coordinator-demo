@@ -115,6 +115,14 @@
 			path = SelfDeallocating;
 			sourceTree = "<group>";
 		};
+		8A4AD1DF29BBE13A004AAC88 /* Deeplink */ = {
+			isa = PBXGroup;
+			children = (
+				8A4AD1D529BBC3E3004AAC88 /* DeepLinkOption.swift */,
+			);
+			path = Deeplink;
+			sourceTree = "<group>";
+		};
 		8AD00C1929BA7B6500E2E3DF /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,13 +152,13 @@
 		8AFDD50029B2606100CD329B /* coordinator-demo */ = {
 			isa = PBXGroup;
 			children = (
+				8A4AD1DF29BBE13A004AAC88 /* Deeplink */,
 				8AD00C1929BA7B6500E2E3DF /* Data */,
 				8AFDD53B29B27FEB00CD329B /* Coordinators */,
 				8AFDD53529B27C3500CD329B /* Extensions */,
 				8AFDD55729B29CBD00CD329B /* Protocol */,
 				8AFDD53A29B27FDD00CD329B /* ViewControllers */,
 				8AFDD50129B2606100CD329B /* AppDelegate.swift */,
-				8A4AD1D529BBC3E3004AAC88 /* DeepLinkOption.swift */,
 				8AFDD50329B2606100CD329B /* SceneDelegate.swift */,
 				8AD00C2229BA8F8700E2E3DF /* SceneCoordinator.swift */,
 				8AFDD50A29B2606200CD329B /* Assets.xcassets */,

@@ -44,8 +44,9 @@ class SceneCoordinator: Coordinator {
         window?.makeKeyAndVisible()
     }
 
-    func start(with option: DeepLinkOption?) {
-        mainCoordinator?.start(with: option)
+    // TODO: Laurie: Should rename to handle(with option: DeepLinkOption?)
+    func handle(with option: DeepLinkOption) -> Bool {
+        return mainCoordinator?.handle(with: option) ?? false
     }
 
     // MARK: - Helpers

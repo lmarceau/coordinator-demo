@@ -25,6 +25,9 @@ open class RouterCoordinator: NSObject, Coordinatable, Coordinator {
 
     open var onCompletion: (() -> Void)?
     open func start() {}
+    func handle(with option: DeepLinkOption) -> Bool {
+        return true
+    }
 
     func addChild(_ coordinator: RouterCoordinator) {
         childCoordinators.append(coordinator)

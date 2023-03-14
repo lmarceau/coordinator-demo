@@ -10,6 +10,7 @@ import UIKit
 class SelfDeallocChildCoordinator: Coordinator, ChildViewDataChanged {
     weak var parentCoordinator: SelfDeallocMainCoordinator?
     weak var navigationController: UINavigationController?
+
     var onDataChanged: ((ChildViewData) -> Void)?
 
     init(navigationController: UINavigationController) {
@@ -32,6 +33,10 @@ class SelfDeallocChildCoordinator: Coordinator, ChildViewDataChanged {
         viewController.coordinator = self
         viewController.delegate = self
         navigationController?.present(viewController, animated: true)
+    }
+
+    func handle(with option: DeepLinkOption) -> Bool {
+        return true
     }
 
     func didFinish() {

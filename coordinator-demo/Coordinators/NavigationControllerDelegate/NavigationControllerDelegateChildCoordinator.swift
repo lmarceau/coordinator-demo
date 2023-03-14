@@ -33,6 +33,10 @@ class NavigationControllerDelegateChildCoordinator: Coordinator, ChildViewDataCh
         viewController.delegate = self
         navigationController.present(viewController, animated: true)
     }
+    
+    func handle(with option: DeepLinkOption) -> Bool {
+        return true
+    }
 
     // MARK: - ChildViewDataChanged
     func dataHasChanged(data: ChildViewData) {

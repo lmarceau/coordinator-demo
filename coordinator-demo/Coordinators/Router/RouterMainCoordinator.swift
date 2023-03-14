@@ -17,16 +17,17 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
         router.setRootModule(mainViewController, hideBar: false)
     }
 
-    func start(with option: DeepLinkOption?) {
-        guard let option = option else { return }
+    override func handle(with option: DeepLinkOption) -> Bool {
         switch option {
         case .main: break // do nothing in this case
         case .child: pushChild()
         default:
-            childCoordinators.forEach { coordinator in
-                coordinator.start(with: option)
-            }
+            break
+//            childCoordinators.forEach { coordinator in
+//                coordinator.start(with: option)
+//            }
         }
+        return true
     }
 
     // MARK: - MainViewButtonClickDelegate
@@ -63,7 +64,7 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
     }
 
     func presentChildOfChild(with url: URL?) {
-        start(with: .childOfChild(url))
+        handle(with: .childOfChild(url))
     }
 
     func callDeeplinkExample() {

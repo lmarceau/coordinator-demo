@@ -21,17 +21,28 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
         navigationController.pushViewController(viewController, animated: false)
     }
 
-    func start(with option: DeepLinkOption?) {
-        guard let option = option else { return }
-        switch option {
-        case .main: break // do nothing in this case
-        case .child: pushChild()
-        default:
-            // TODO: Laurie - there's no child added at this point. Needs adjustment
-            childCoordinators.forEach { coordinator in
-                coordinator.start(with: option)
+    func handle(with option: DeepLinkOption) -> Bool {
+        // Loop through existing child coordinators to see if we handle deeplink
+        // This can be in a default implementation of protocol
+        for child in childCoordinators {
+            let isHandled = child.handle(with: option)
+            if isHandled {
+                return isHandled
             }
         }
+
+        // If not existing, check if we should support the deeplink
+        // return false if not handled, or true if handled
+        switch option {
+        case .child: pushChild()
+        case .childOfChild:
+            let child = BasicChildCoordinator(navigationController: navigationController)
+            childCoordinators.append(child)
+            return child.handle(with: option)
+        default: break
+        }
+
+        return true
     }
 
     func childDidFinish(_ child: Coordinator?) {
@@ -70,7 +81,7 @@ class BasicMainCoordinator: Coordinator, MainViewButtonClickDelegate {
     }
 
     func presentChildOfChild(with url: URL?) {
-        start(with: .childOfChild(url))
+        _ = handle(with: .childOfChild(url))
     }
 
     func callDeeplinkExample() {
