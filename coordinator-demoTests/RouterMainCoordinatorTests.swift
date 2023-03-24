@@ -10,12 +10,12 @@ import XCTest
 
 final class RouterMainCoordinatorTests: XCTestCase {
     var navigationController: NavigationController!
-    var router: MockRouter!
+    var router: DefaultRouter!
 
     override func setUp() {
         super.setUp()
         navigationController = MockNavigationController()
-        router = MockRouter(navigationController: navigationController)
+        router = DefaultRouter(navigationController: navigationController)
     }
 
     override func tearDown() {
@@ -29,7 +29,13 @@ final class RouterMainCoordinatorTests: XCTestCase {
         subject.pushChild()
 
         XCTAssertTrue(subject.childCoordinators[0] is RouterChildPushCoordinator)
-        XCTAssertEqual(router.pushCalled, 1)
+    }
+
+    func testPresentChild() {
+        let subject = RouterMainCoordinator(router: router)
+        subject.presentChild()
+
+        XCTAssertTrue(subject.childCoordinators[0] is RouterChildPresentCoordinator)
     }
 
     // TODO: do the rest of the tests

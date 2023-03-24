@@ -13,7 +13,7 @@ import UIKit
 ///
 /// `Presentable` can be a Router or a ViewController that we want to present
 /// `Module`: a `Presentable` that can be presented, pushed or dismissed from the stack
-protocol Router: AnyObject, Presentable, UINavigationControllerDelegate {
+protocol Router: AnyObject, Presentable, UINavigationControllerDelegate, UIAdaptivePresentationControllerDelegate {
     /// The navigation controller of the router which is used for pushing and presenting `Presentable` modules
     var navigationController: NavigationController { get }
 
@@ -24,7 +24,7 @@ protocol Router: AnyObject, Presentable, UINavigationControllerDelegate {
     /// - Parameters:
     ///   - module: The presentable module to present
     ///   - animated: true means it will be animated
-    func present(_ module: Presentable, animated: Bool)
+    func present(_ module: Presentable, animated: Bool, completion: (() -> Void)?)
 
     /// Dismiss a modile
     /// - Parameters:
@@ -73,7 +73,12 @@ class DefaultRouter: NSObject, Router {
         self.navigationController.delegate = self
     }
 
-    func present(_ module: Presentable, animated: Bool = true) {
+    func present(_ module: Presentable, animated: Bool = true, completion: (() -> Void)? = nil) {
+        if let completion = completion {
+            completions[module.toPresentable()] = completion
+        }
+
+        module.toPresentable().presentationController?.delegate = self
         navigationController.present(module.toPresentable(), animated: animated, completion: nil)
     }
 
@@ -138,5 +143,12 @@ class DefaultRouter: NSObject, Router {
         }
 
         runCompletion(for: poppedViewController)
+    }
+
+    // MARK: - UIAdaptivePresentationControllerDelegate
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        print("presentationControllerDidDismiss")
+        runCompletion(for: presentationController.presentedViewController)
     }
 }

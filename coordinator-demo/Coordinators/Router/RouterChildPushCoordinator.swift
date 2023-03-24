@@ -20,6 +20,10 @@ class RouterChildPushCoordinator: RouterCoordinator, ChildViewDataChanged {
         presentedViewController.delegate = self
     }
 
+    deinit {
+        print("RouterChildPushCoordinator deinit")
+    }
+
     override func handle(with option: DeepLinkOption) -> Bool {
         let isHandled = super.handle(with: option)
         guard !isHandled else { return isHandled }

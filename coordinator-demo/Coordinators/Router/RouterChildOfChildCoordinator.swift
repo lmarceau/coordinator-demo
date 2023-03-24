@@ -16,6 +16,10 @@ class RouterChildOfChildCoordinator: RouterCoordinator {
         super.init(router: router)
     }
 
+    deinit {
+        print("RouterChildOfChildCoordinator deinit")
+    }
+
     // We must override toPresentable() so it doesn't
     // default to the router's navigationController
     override func toPresentable() -> UIViewController {

@@ -65,7 +65,14 @@ class RouterMainCoordinator: RouterCoordinator, MainViewButtonClickDelegate {
 
         addChild(coordinator)
         coordinator.start()
-        router.present(coordinator, animated: true)
+
+        router.present(coordinator, animated: true) { [weak self] in
+            self?.removeChild(coordinator)
+            print("Router Coordinator removed child")
+        }
+
+//        let vc = RouterPresentedViewController(data: data)
+//        router.navigationController.present(vc, animated: true)
     }
 
     func presentChildOfChild(with url: URL?) {

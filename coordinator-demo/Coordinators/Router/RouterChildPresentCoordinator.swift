@@ -5,7 +5,7 @@
 //  Created by Laurie Marceau on 2023-03-09.
 //
 
-import Foundation
+import UIKit
 
 // Vertical flow
 class RouterChildPresentCoordinator: RouterCoordinator, ChildViewDataChanged {
@@ -17,13 +17,21 @@ class RouterChildPresentCoordinator: RouterCoordinator, ChildViewDataChanged {
         self.presentedViewController = RouterPresentedViewController(data: data)
         super.init(router: router)
 
-        router.setRootModule(presentedViewController, hideBar: false)
+//        router.setRootModule(presentedViewController, hideBar: false)
         presentedViewController.delegate = self
+    }
+
+    deinit {
+        print("RouterChildPresentCoordinator deinit")
     }
 
     // MARK: - ChildViewDataChanged
     func dataHasChanged(data: ChildViewData) {
         guard let onDataChanged = onDataChanged else { return }
         onDataChanged(data)
+    }
+
+    override func toPresentable() -> UIViewController {
+        return presentedViewController
     }
 }

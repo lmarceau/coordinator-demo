@@ -16,6 +16,10 @@ class RouterChildOfChildPresentedVC: UIViewController {
         view.backgroundColor = .systemRed
     }
 
+    deinit {
+        print("RouterChildOfChildPresentedVC deinit")
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
