@@ -42,7 +42,6 @@
 		8AFDD55029B29BB400CD329B /* RouterChildPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD54F29B29BB400CD329B /* RouterChildPushCoordinator.swift */; };
 		8AFDD55329B29BF300CD329B /* RouterPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */; };
 		8AFDD55529B29C9400CD329B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55429B29C9400CD329B /* Router.swift */; };
-		8AFDD55929B29CC400CD329B /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55829B29CC400CD329B /* Presentable.swift */; };
 		8AFDD55C29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDD55B29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +94,6 @@
 		8AFDD54F29B29BB400CD329B /* RouterChildPushCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterChildPushCoordinator.swift; sourceTree = "<group>"; };
 		8AFDD55229B29BF300CD329B /* RouterPresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPresentedViewController.swift; sourceTree = "<group>"; };
 		8AFDD55429B29C9400CD329B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		8AFDD55829B29CC400CD329B /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		8AFDD55B29B2AB3600CD329B /* SelfDeallocMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDeallocMainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,7 +281,6 @@
 		8AFDD55729B29CBD00CD329B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				8AFDD55829B29CC400CD329B /* Presentable.swift */,
 				8AD00C1E29BA80B400E2E3DF /* ChildViewDataChanged.swift */,
 				8AD4923629C0EE1400EFC3BB /* NavigationController.swift */,
 			);
@@ -430,7 +427,6 @@
 				8A4AD1DA29BBD544004AAC88 /* BasicChildOfChildCoordinator.swift in Sources */,
 				8AD00C2329BA8F8700E2E3DF /* SceneCoordinator.swift in Sources */,
 				8A233BAA29B79D1900C4E35B /* SelfDeallocChildCoordinator.swift in Sources */,
-				8AFDD55929B29CC400CD329B /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

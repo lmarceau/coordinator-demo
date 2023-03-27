@@ -7,14 +7,13 @@
 
 import UIKit
 
-protocol Coordinatable: AnyObject, Presentable {
+// This will be called Coordinator in another project so we have only one protocol. This currently exists only since
+// we support many coordinator type in this particular project.
+protocol Coordinatable: AnyObject {
     var router: Router { get }
-    var onCompletion: (() -> Void)? { get set }
-    // Done through Coordinator protocol for now to accomodate AppDelegate to have a common type
-    // func start()
 }
 
-open class RouterCoordinator: NSObject, Coordinatable, Coordinator {
+open class RouterCoordinator: NSObject, Coordinatable {
     var childCoordinators: [RouterCoordinator] = []
     var router: Router
 
@@ -23,8 +22,9 @@ open class RouterCoordinator: NSObject, Coordinatable, Coordinator {
         super.init()
     }
 
-    open var onCompletion: (() -> Void)?
-    open func start() {}
+    // No start function since parameters will be passed in each coordinator custom start method.
+    // This means having a default one without parameter isn't useful
+//    open func start() {}
 
     // Loop through existing child coordinators to see if we handle deeplink
     func handle(with option: DeepLinkOption) -> Bool {
@@ -47,10 +47,5 @@ open class RouterCoordinator: NSObject, Coordinatable, Coordinator {
         else { return }
 
         childCoordinators.remove(at: index)
-    }
-
-    // Make this function open so we can override it in a different module
-    open func toPresentable() -> UIViewController {
-        return router.toPresentable()
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// A protocol to exemplify passing data around view controllers with the coordinators
 protocol ChildViewDataChanged: AnyObject {
     func dataHasChanged(data: ChildViewData)
 }

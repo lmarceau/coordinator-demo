@@ -10,15 +10,7 @@ import UIKit
 // Horizontal flow
 class RouterChildPushCoordinator: RouterCoordinator, ChildViewDataChanged {
 
-    var presentedViewController: RouterPresentedViewController
     var onDataChanged: ((ChildViewData) -> Void)?
-
-    init(router: Router, data: ChildViewData) {
-        self.presentedViewController = RouterPresentedViewController(data: data)
-        super.init(router: router)
-
-        presentedViewController.delegate = self
-    }
 
     deinit {
         print("RouterChildPushCoordinator deinit")
@@ -35,21 +27,21 @@ class RouterChildPushCoordinator: RouterCoordinator, ChildViewDataChanged {
             let child = RouterChildOfChildCoordinator(router: router)
             print("Adding child of child coordinator")
             addChild(child)
-            router.push(child, animated: true, completion: {
-                print("Removing child of child coordinator")
-                self.removeChild(child)
-            })
+            child.start() { [weak self] in
+                self?.removeChild(child)
+                print("Router child of child Coordinator removed")
+            }
             return true
         default: break
         }
 
         return false
     }
-    
-    // We must override toPresentable() so it doesn't
-    // default to the router's navigationController
-    override func toPresentable() -> UIViewController {
-        return presentedViewController
+
+    func start(data: ChildViewData, onCompletion: @escaping () -> Void) {
+        let presentedViewController = RouterPresentedViewController(data: data)
+        presentedViewController.delegate = self
+        router.push(presentedViewController, animated: true, completion: onCompletion)
     }
 
     // MARK: - ChildViewDataChanged

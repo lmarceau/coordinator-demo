@@ -24,7 +24,6 @@ final class RouterTests: XCTestCase {
         let subject = DefaultRouter(navigationController: navigationController)
         XCTAssertNil(subject.rootViewController)
         XCTAssertEqual(subject.navigationController, navigationController)
-        XCTAssertEqual(subject.toPresentable(), navigationController)
     }
 
     func testPresentViewController() {
@@ -37,7 +36,7 @@ final class RouterTests: XCTestCase {
 
     func testDismissModule() {
         let subject = DefaultRouter(navigationController: navigationController)
-        subject.dismissModule()
+        subject.dismiss()
 
         XCTAssertEqual(navigationController.dismissCalled, 1)
     }

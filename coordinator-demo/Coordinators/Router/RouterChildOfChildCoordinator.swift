@@ -9,10 +9,7 @@ import UIKit
 
 class RouterChildOfChildCoordinator: RouterCoordinator {
 
-    var presentedViewController: RouterChildOfChildPresentedVC
-
     override init(router: Router) {
-        self.presentedViewController = RouterChildOfChildPresentedVC()
         super.init(router: router)
     }
 
@@ -20,9 +17,8 @@ class RouterChildOfChildCoordinator: RouterCoordinator {
         print("RouterChildOfChildCoordinator deinit")
     }
 
-    // We must override toPresentable() so it doesn't
-    // default to the router's navigationController
-    override func toPresentable() -> UIViewController {
-        return presentedViewController
+    func start(onCompletion: @escaping () -> Void) {
+        let presentedViewController = RouterChildOfChildPresentedVC()
+        router.present(presentedViewController, animated: true, completion: onCompletion)
     }
 }
