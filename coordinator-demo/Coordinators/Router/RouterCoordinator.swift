@@ -13,7 +13,7 @@ protocol Coordinatable: AnyObject {
     var router: Router { get }
 }
 
-open class RouterCoordinator: NSObject, Coordinatable {
+open class RouterCoordinator: NSObject, Coordinator, Coordinatable {
     var childCoordinators: [RouterCoordinator] = []
     var router: Router
 

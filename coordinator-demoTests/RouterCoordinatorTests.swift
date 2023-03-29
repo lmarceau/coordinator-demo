@@ -54,37 +54,32 @@ class MockRouter: NSObject, Router {
     }
 
     var presentCalled = 0
-    func present(_ module: Presentable, animated: Bool) {
+    func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         presentCalled += 1
     }
 
-    var dismissModuleCalled = 0
-    func dismissModule(animated: Bool, completion: (() -> Void)?) {
-        dismissModuleCalled += 1
+    var dismissCalled = 0
+    func dismiss(animated: Bool, completion: (() -> Void)?) {
+        dismissCalled += 1
     }
 
     var pushCalled = 0
-    func push(_ module: Presentable, animated: Bool, completion: (() -> Void)?) {
+    func push(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         pushCalled += 1
     }
 
-    var popModuleCalled = 0
-    func popModule(animated: Bool) {
-        popModuleCalled += 1
+    var popViewControllerCalled = 0
+    func popViewController(animated: Bool) {
+        popViewControllerCalled += 1
     }
 
-    var setRootModuleCalled = 0
-    func setRootModule(_ module: Presentable, hideBar: Bool) {
-        setRootModuleCalled += 1
+    var setRootViewControllerCalled = 0
+    func setRootViewController(_ viewController: UIViewController, hideBar: Bool) {
+        setRootViewControllerCalled += 1
     }
 
     var popToRootModuleCalled = 0
-    func popToRootModule(animated: Bool) {
+    func popToRootViewController(animated: Bool) {
         popToRootModuleCalled += 1
-    }
-
-    var viewControllerPresentable = UIViewController()
-    func toPresentable() -> UIViewController {
-        return viewControllerPresentable
     }
 }
